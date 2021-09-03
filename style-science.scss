@@ -1,0 +1,121 @@
+$my-font: Arial, Helvetica, sans-serif;
+$my-textcolor:rgb(226, 226, 226);
+$my-color:rgb(151, 167, 172);
+$my-alignment: center;
+$my-seccolor: rgb(150, 189, 233);
+$my-tricolor: #808080;
+
+@mixin rounded-corners ($radius: 10px) { 
+    -webkit-border-radius: $radius; 
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin my-fonts { 
+    font-size: 6em;
+    font-weight: 200;
+}
+body{
+    background: linear-gradient(90deg, rgba(3,3,29,1) 0%, rgba(44,93,135,1) 100%);
+
+}
+.links{
+  display: flex;  
+  justify-content:$my-alignment;
+  font-family: $my-font;
+  font-weight: 100;
+}
+ul{
+    list-style: none;
+    li{ 
+        padding-right: 25px !important; 
+    }
+        a{
+            text-decoration: none;
+            width: 150px;
+            display:inline-block;
+            text-align:$my-alignment;
+            color: $my-textcolor;
+            background-color: #000000;   
+            padding: 10px 10px;
+            @include rounded-corners;
+        }
+    }
+    a:hover{
+        color: $my-seccolor;
+    }
+      a.active {
+        background-color: $my-tricolor;
+      }
+      
+h2, h3 {
+    font-family: $my-font;
+    color: $my-seccolor; 
+    text-align: $my-alignment;
+}
+h1{
+   font-family: $my-font;
+    color: $my-seccolor;
+    text-align: $my-alignment;
+    font-size: 5.5em;
+}
+h2, h3{
+    font-weight: 100;
+    font-size: 2em;
+}
+h4{
+    color:$my-color;
+}
+.beskrivelse{
+    font-family: $my-font;
+    color: $my-color;  
+}
+.flex-container{
+    display: flex;  
+    justify-content: space-evenly;
+}
+.box{
+    display: inline-block;
+    width: 670px;
+    margin-right: 30px;
+    text-align: $my-alignment;
+    background: $my-seccolor;
+    @include rounded-corners;
+    padding: 20px 20px;
+    line-height: 1.5;
+    font-family: $my-font;
+}
+.resize {
+    width: 350px;
+    height: auto;
+}
+* {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px 10px;
+  }
+  /* Style the counter cards */
+  .card {
+    padding: 16px;
+    text-align: left;
+    background: linear-gradient(0deg, rgba(7,5,29,1) 0%, rgba(23,53,94,1) 100%);
+    line-height: 1.4;
+    @include rounded-corners;
+    .underhead{
+        text-align: $my-alignment;
+        font-size:x-large;
+        font-family: $my-font;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  .some{
+    @extend .links;
+  }
